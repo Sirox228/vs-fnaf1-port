@@ -147,15 +147,6 @@ class Paths
 
 	static public function sound(key:String, ?library:String):Dynamic
 	{
-		#if MODS_ALLOWED
-		var file:String = modsSounds(key);
-		if(Assets.exists(file)) {
-			if(!customSoundsLoaded.exists(file)) {
-				customSoundsLoaded.set(modsSounds(key), OpenFlAssets.getSound(file));
-			}
-			return customSoundsLoaded.get(file);
-		}
-		#end
 		return getPath('sounds/$key.$SOUND_EXT', SOUND, library);
 	}
 	
@@ -166,52 +157,18 @@ class Paths
 
 	inline static public function music(key:String, ?library:String):Dynamic
 	{
-		#if MODS_ALLOWED
-		var file:String = modsMusic(key);
-		if(Assets.exists(file)) {
-			if(!customSoundsLoaded.exists(file)) {
-				customSoundsLoaded.set(file, OpenFlAssets.getSound(file));
-			}
-			return customSoundsLoaded.get(file);
-		}
-		#end
 		return getPath('music/$key.$SOUND_EXT', MUSIC, library);
 	}
 
 	inline static public function voices(song:String):Any
 	{
-		#if MODS_ALLOWED
-		var file:OPs = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Voices'));
-		if(file != null) {
-			return file;
-		}
-		#end
 		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Voices.$SOUND_EXT';
 	}
 
 	inline static public function inst(song:String):Any
 	{
-		#if MODS_ALLOWED
-		var file:OPs = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Inst'));
-		if(file != null) {
-			return file;
-		}
-		#end
 		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Inst.$SOUND_EXT';
 	}
-
-	#if MODS_ALLOWED
-	inline static private function returnSongFile(file:String):OPs //OPs is openfl.media.Sound
-	{
-		if(OpenFlAssets.exists(file)) {
-			if(!customSoundsLoaded.exists(file)) {
-				customSoundsLoaded.set(file, OpenFlAssets.getSound(file));
-			}
-			return customSoundsLoaded.get(file);
-		}
-		return null;
-	}
-	#end
 
 	inline static public function image(key:String, ?library:String):Dynamic
 	{
@@ -279,7 +236,7 @@ class Paths
 		}
 		#end
 		
-		if(OpenFlAssets.exists(Paths.getPreloadPath(key))) {
+		if(OpenFlAssets.exists(Paths.getPreloadPath(key, type))) {
 			return true;
 		}
 		return false;
