@@ -45,10 +45,6 @@ class MusicBeatSubstate extends FlxSubState
 		controls.setVirtualPad(_virtualpad, DPad, Action);
 		trackedinputs = controls.trackedinputs;
 		controls.trackedinputs = [];
-
-		#if android
-		controls.addAndroidBack();
-		#end
 	}
 	
 	override function destroy() {
