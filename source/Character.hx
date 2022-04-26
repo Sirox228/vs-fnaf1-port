@@ -119,7 +119,7 @@ class Character extends FlxSprite
 
 				var json:CharacterFile = cast Json.parse(rawJson);
 				#if MODS_ALLOWED
-				var txtToFind:String = Paths.getPreloadPath('images/' + json.image + '.txt', TEXT);
+				var txtToFind:String = Paths.getPreloadPath('images/' + json.image + '.txt');
 				if(Assets.exists(txtToFind))
 				#else
 				if(Assets.exists(Paths.getPath('images/' + json.image + '.txt', TEXT)))
