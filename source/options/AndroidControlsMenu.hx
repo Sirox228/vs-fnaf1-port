@@ -8,6 +8,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import ui.Hitbox;
 import Config;
+import Alphabet;
 import ui.FlxVirtualPad;
 
 using StringTools;
