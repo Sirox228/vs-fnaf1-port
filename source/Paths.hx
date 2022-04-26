@@ -279,7 +279,7 @@ class Paths
 		}
 		#end
 		
-		if(OpenFlAssets.exists(Paths.getPreloadPath(key, type))) {
+		if(OpenFlAssets.exists(Paths.getPreloadPath(key))) {
 			return true;
 		}
 		return false;
