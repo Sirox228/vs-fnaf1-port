@@ -181,7 +181,7 @@ class Paths
 	inline static public function voices(song:String):Any
 	{
 		#if MODS_ALLOWED
-		var file:String = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Voices'));
+		var file:OPs = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Voices'));
 		if(file != null) {
 			return file;
 		}
@@ -192,7 +192,7 @@ class Paths
 	inline static public function inst(song:String):Any
 	{
 		#if MODS_ALLOWED
-		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Inst'));
+		var file:OPs = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Inst'));
 		if(file != null) {
 			return file;
 		}
