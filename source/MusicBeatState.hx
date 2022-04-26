@@ -48,10 +48,6 @@ class MusicBeatState extends FlxUIState
 		controls.setVirtualPad(_virtualpad, DPad, Action);
 		trackedinputs = controls.trackedinputs;
 		controls.trackedinputs = [];
-
-		#if android
-		controls.addAndroidBack();
-		#end
 	}
 	
 	override function destroy() {
