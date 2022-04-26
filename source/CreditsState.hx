@@ -57,7 +57,7 @@ class CreditsState extends MusicBeatState
 				for(i in firstarray)
 				{
 					var arr:Array<String> = i.replace('\\n', '\n').split("::");
-					if(arr.length >= 5) arr.push(folder);
+					if(arr.length >= 5) arr.push(Paths.mods());
 					creditsStuff.push(arr);
 				}
 				creditsStuff.push(['']);
