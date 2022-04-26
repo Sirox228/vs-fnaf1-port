@@ -151,7 +151,7 @@ class Paths
 		var file:String = modsSounds(key);
 		if(Assets.exists(file)) {
 			if(!customSoundsLoaded.exists(file)) {
-				customSoundsLoaded.set(file, OpenFlAssets.getSound(file));
+				customSoundsLoaded.set(modsSounds(key), OpenFlAssets.getSound(file));
 			}
 			return customSoundsLoaded.get(file);
 		}
