@@ -1336,7 +1336,6 @@ class PlayState extends MusicBeatState
 				} else {
 					startCountdown();
 				}
-				FileSystem.deleteFile(SUtil.getPath() + name + '.' + Paths.VIDEO_EXT);
 			}
 			return;
 		} else {
